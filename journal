@@ -1,0 +1,19 @@
+06-05-2025 17:35
+    So I was moving my gitlab project to my github account. Testing one of my flask project and totally forgot how my app works. Reviewed it and brings me a headache.I decided to create a new repo on github and instead and re-create the application using nodejs stack MERN stack.
+    
+    I the MERN stack, I'm surpised that I have to decouple my project to frontend and backend whereas on flask, I don't have to do it.
+    There is what they called CORS which allows two http server endpoints to communicate to each other
+
+    I queried about middleware too, it seems that it was a function running before the router handle.
+
+    I researched about .env values, as it was required to the guide I'm following. To access the environment, you need to define the dotenv by: require('dotenv').config(). Then, it will be moved to an object called process to its env property. So for example, you define the PORT, you can call it by process.env.PORT
+
+    I also defined starting my project using npm start command. I have to edit the package.json file's script. There was a test script, I got rid of it and append the script there.
+
+    I also learned, on express, you can decouple routes and routes are also middleware. So I have decided to separate route categories
+
+    I will commit this and continue later. I learned also that this project is portable, that node_modules are the package files and package.json is were all of the package used were tracked and recorded
+
+    For testing purposes, I will leave .env to my github.
+06-05-2025 19:03
+
