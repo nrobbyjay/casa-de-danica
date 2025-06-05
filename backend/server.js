@@ -1,10 +1,7 @@
 require('dotenv').config()
-
 const express = require('express')
-
 const cors = require('cors')
-
-const {connectInMemoryDB} = require('./db/memory')
+const mongoose = require('mongoose')
 
 const app = express()
 app.use(cors())
@@ -20,11 +17,18 @@ const user = require('./routes/user')
 app.use('/api/user', user)
 
 
+const serve = async ()=>{
+    try{
+        await mongoose.connect(process.env.MONGOURI)
+        const server = app.listen(process.env.PORT, ()=>{
+            console.log(`Serving at port ${process.env.PORT}`)
 
-const server = app.listen(process.env.PORT, ()=>{
-    console.log(`Service is starting at port ${process.env.PORT}`)
-    connectInMemoryDB()
-})
-server.on('error', (e)=>{
-    console.log(`Problem starting server: ${e}`)
-})
+        })
+
+    }catch(e){
+        console.log('An error occured starting server: ' + e)
+    }
+
+}
+console.log(Date.now())
+serve()
