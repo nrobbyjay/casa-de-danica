@@ -13,8 +13,8 @@ app.use('/api/booking', booking)
 const payment = require('./routes/payment')
 app.use('/api/payment', payment)
 
-const user = require('./routes/user')
-app.use('/api/user', user)
+const feedback = require('./routes/feedback')
+app.use('/api/feedback', feedback)
 
 
 const serve = async ()=>{
@@ -30,5 +30,4 @@ const serve = async ()=>{
     }
 
 }
-console.log(Date.now())
 serve()
