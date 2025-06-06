@@ -17,8 +17,8 @@ router.get('/track/:id',async (req, res)=>{
 
 router.post('/create', async (req,res)=>{
     try{
-        await booking.create(req.body)
-        return res.send(200)
+        const created = await booking.create(req.body)
+        return res.status(200).json({message: created.referenceId})  
     }catch(e){
         console.log(e)
         return res.status(400).json(e._message)
@@ -30,10 +30,10 @@ router.put('/cancel',async (req, res)=>{
     try{
         let book = await booking.findOneAndUpdate({referenceId: req.body.referenceId}, {cancelled: true}, { new: true, runValidators: true })
         if(!book) return res.status(404).json({error: "reference not found"})
-        return res.status(200)
+        return res.sendStatus(200)
     }catch(e){
         console.log(e)
-        return res.status(500)
+        return res.sendStatus(500)
     }
 })
 
