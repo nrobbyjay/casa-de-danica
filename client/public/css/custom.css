@@ -1,0 +1,51 @@
+:root {
+    --primary: #B08A46;       /* Elegant Gold */
+    --secondary: #2C2A26;     /* Deep Charcoal Black */
+    --accent: #3E5F51;        /* Tropical Green */
+    --background: #F4EFE7;    /* Soft Sand Beige */
+    --surface: #E3D5C1;       /* Warm Light Brown */
+    --border: rgba(0, 0, 0, 0.2); /* Subtle Borders */
+    --text-light: #FAFAFA;    /* Soft White for Text */
+    --text-dark: #5A5A5A;     /* Muted Dark Gray */
+    --hover-glass: rgba(255, 255, 255, 0.15); /* Hover Frost Effect */
+}
+
+
+.card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    color: var(--text-dark);
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.card-title {
+    color: var(--primary);
+}
+
+
+.btn-primary {
+    background: var(--primary);
+    border: none;
+    color: var(--text-light);
+    transition: 0.3s ease-in-out;
+}
+
+.btn-primary:hover {
+    background: var(--accent);
+    color: var(--text-light);
+}
+
+.navbar {
+    background: var(--secondary);
+    border-bottom: 2px solid var(--primary);
+}
+
+.navbar-nav .nav-link {
+    color: var(--text-dark);
+    transition: color 0.3s ease-in-out;
+}
+
+.navbar-nav .nav-link:hover {
+    color: var(--primary);
+}
